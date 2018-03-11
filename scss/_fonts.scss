@@ -1,0 +1,33 @@
+@font-face {
+  font-family: OswaldRegular;
+  src: url(../fonts/Oswald-Regular.ttf);
+}
+@font-face {
+  font-family: OswaldBold;
+  src: url(../fonts/Oswald-Bold.ttf);
+}
+@font-face {
+  font-family: Raleway ExtraBold;
+  src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+@font-face {
+  font-family: DroidSerifItalic;
+  src: url(../fonts/DroidSerif-Italic.ttf);
+}
+@font-face {
+  font-family: OpenSansRegular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSansLight;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+
+$oswald_regular: OswaldRegular;
+$oswald_bold: OswaldBold;
+$raleway_extraBold: RalewayExtraBold;
+$droidSerif_italic: DroidSerifItalic;
+$open_sans_regular: OpenSansRegular;
+$open_sans_light: OpenSansLight;
+
+

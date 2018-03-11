@@ -1,0 +1,465 @@
+@import "fonts";
+@import "global";
+
+.header {    
+  position: fixed; 
+  width: 100%; 
+  background-color: $dark;  
+  min-height: 72px;
+  margin-top: 0;
+  @extend %flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  &__logo {
+    margin-left: 2%;
+    .link{
+      @include font($raleway_extraBold, $base_size * 2.5, $white2);
+      text-decoration: none;
+    }
+  }
+  .menu {
+    @extend %flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-basis: 50%;
+    flex-wrap: wrap;
+    list-style-type: none;
+    &__item {
+      flex-basis: fit-content;
+      .link {
+        @include font($oswald_regular, $base_size + 2, $white);
+        text-decoration: none;
+		padding: 4px;
+        &:hover {
+          background: $red;
+          //border: 1px solid $red;
+        }
+      }
+    }
+  }
+}
+.slider-block {
+  @include wh(100%, 291px);
+  margin-top: 0;
+  .slider {
+    position: relative;
+    width: 100%;
+    top: 74px;	
+    &-top { 	
+      &__img {
+        width: 100%;
+      }
+    }
+    &-logo {
+      @include position(relative, -234px, 124px);
+      @include font($oswald_bold, $base_size * 2.5, #FEFEFE);
+      background-color: #252423;
+      @include wh(342px, 36px);
+      padding: 8px;
+    }
+  }
+  .phone {
+    @include position(relative, -290px, 68%);
+    @include wh(140px, 37px);
+    background: $red;
+    &__img {
+      cursor: pointer;
+    }
+    &__number{
+      @include position(relative, -49px, 46px);
+      @include font($oswald_regular, $base_size + 2, $white);
+    }
+  }
+  .slick-prev{
+    left: 30px;
+	top: 52%;
+    z-index: 3; 
+	@include wh(40px, 40px);
+  }
+  .slick-next{
+	@include wh(40px, 40px);	
+    right: 50px;    
+   }
+}
+.slick-prev:before, .slick-next:before {
+  color: $blue;
+  background-color: $white;
+}
+.features {
+  width: 100%;  
+  margin-top: 106px;
+  &-main {   
+    margin: 15px auto;
+    &__title {
+      @include font($oswald_bold, 30px, $dark);
+      @include text(center, uppercase);
+      margin-bottom: -10px;
+    }
+    &__description {
+      width: fit-content;
+      margin: 12px auto;
+      @include font($droidSerif_italic, $base_size + 4, #a2a2a2);
+    }
+  }
+  &-list {
+    list-style-type: none;
+    margin: 0 auto;
+    @extend %flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  &-item {
+    flex-basis:350px;
+    margin-top: 20px;
+    &__img {
+      @include wh(74px, 93px);
+      display: block;
+      margin: 0 auto;
+    }
+    &__title {
+      @include font($oswald_bold, $base_size + 4, $dark);
+      @include text(center, uppercase);
+    }
+    &__description{
+      @include font($open_sans_regular,$base_size +1, $gray2);
+    }
+  }
+}
+.team {
+  background: url(../images/avatar.jpg) no-repeat center top fixed;  
+  @include wh(100%, 750px);
+  margin-top: 0;
+  &-main {
+    @include wh(225px, 100px);
+    margin: 0 auto;
+    &__title {
+      padding-top: 15px;
+      @include font($oswald_bold, $base_size * 2, $white);
+      @include text(center, uppercase);
+    }
+    &__line{
+      display: block;
+      margin: -18px auto;
+    }
+  }
+  &-list {
+    @extend %flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    max-width: 96%;
+    margin: -30px auto;
+    padding: 0;
+  }
+  .trainer {
+    width: 100%;
+    @extend %team_item;
+    &__title {
+      @include font($oswald_bold, $base_size + 2, $dark);
+      @include text(center, uppercase);
+      padding-top: 2px;
+    }
+    &__subtitle {
+      @include font($oswald_regular, $base_size, $gray3);
+      @include text(center, uppercase);
+    }
+    &-active {
+      @extend %team_item;
+      display: none;
+      margin-top: 5px;      
+      &__title {
+        margin-top: 10px;
+        margin-left: 23px;
+        @include font($oswald_bold, $base_size + 2, $dark);
+        @include text(none, uppercase);
+      }
+      &__subtitle {
+        @include font($oswald_regular, $base_size, $gray3);
+        @include text(none, uppercase);
+        margin-left: 25px;
+      }
+      &__description {
+        @include font($open_sans_regular, $base_size + 1, $gray2);
+        padding: 5px;
+      }
+      &__social{
+        margin: 30px auto;
+        @include wh(225px, 15px);
+        .social-item {
+          margin-left: 15px;
+          &:hover{
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+}
+.gallery {
+  width: 100%;
+  &__title {
+    @include font($oswald_bold, $base_size * 2, $dark);
+    @include text(center, uppercase);
+  }
+  &__line {
+    display: block;
+    margin: -18px auto 17px;
+  }
+  &__description {
+    @include font($open_sans_regular, $base_size, $gray2);
+    @include text(center, none);
+    width: 526px;
+    margin: 0 auto;
+  }
+  &-list {
+    @extend %flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+  &-item{
+    flex-basis: 277px;    
+    margin-top: 20px;
+    &__img{
+      cursor: pointer;
+    }
+    &__description {
+      @include font($oswald_bold, $base_size + 2, $dark);
+      @include text(center, none);
+    }
+    &__date {
+      width: 277px;
+      @include font($oswald_regular, $base_size, $gray3);
+      @include text(center, none);
+    }
+  }
+}
+.tariffs {
+  width: 100%;
+  margin-top: 20px;
+  background-color: $red;
+  padding-bottom: 5px;
+  &__title {
+    @include text(center, uppercase);
+    @include font($oswald_bold, $base_size * 2, $white);
+    padding-top: 14px;
+  }
+  &__line{
+    display: block;
+    margin: -18px auto 17px;
+  }
+  &-list{
+    list-style-type: none;
+    @extend %flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%; 
+  }
+  &-plan{
+      flex-basis: 338px;
+      min-height: 404px;
+      background-color: $red2;
+      margin-bottom: 5px;
+      border: 1px solid $red2;
+      cursor: pointer;
+	  outline: none;
+      &_active{
+        border: 1px solid $white;
+       }
+      &__description {
+        list-style: none url("../images/tick.png");
+        .description-item {
+          @include text(center, none);
+          padding-bottom: 5px;
+          @include font($open_sans_regular, $base_size + 2, $white);
+        }
+      }
+      &__title{
+        @include font($oswald_bold, $base_size * 1.5, $white);
+        @include text(center, uppercase);
+      }
+      &__price{
+        @include font($oswald_bold, $base_size * 3, $white);
+        @include text(center, none);
+        .price-sup{
+          font-size: $base_size + 2;
+        }
+      }
+      &__button {
+          @include font($oswald_bold, $base_size + 6, $white);
+          @include text(center, uppercase);
+          padding: 18px 50px;
+          margin-left: 70px;
+          margin-top: 12px;
+          cursor: pointer;
+          border: none;
+          background: $red;
+          color: $white;
+          &_active {
+            background: $white;
+            color: $red2;
+          }
+      }
+    }
+  }
+.partners {
+  width: 100%;
+  margin-top: 4px;
+  &__title {
+    @include font($oswald_bold, $base_size * 2, $dark);
+    @include text(center, uppercase);
+  }
+  &__line {
+    display: block;
+    margin: -18px auto 17px;
+  }
+  .slider-partners {
+    width: 50%;
+    margin: 0 auto;
+	outline: none;
+    &__img {
+      width: 80%;
+	  outline: none;
+    }
+  }
+  .slick-slide{
+	outline: none;
+  }
+}
+.footer {
+  width: 100%;
+  background-color: $dark;
+  padding: 0;
+  margin-top: 15px;  
+  &-promote-social {
+    @extend %flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $gray;
+  }
+  &-promote {
+     &__twitter{
+       margin: 17px 0 0 27px;
+     }
+     &__description {
+       display: inline-block;
+       margin-left: 9px;
+       width: 560px;
+       @include font($open_sans_light, $base_size + 1, $white);
+       .description-span{
+         color: #717171;
+       }
+     }
+  }
+  &-social{
+    margin: 14px 10px 0 0;
+    &__item {
+      margin-right: 10px;
+      cursor: pointer;
+      &:hover{
+        background-color: $red;
+      }
+    }
+  }
+  &-contact-message {
+    @extend %flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px; 
+  }
+  &-contact{
+   flex-basis: 30%;
+    &__title {
+      @include font($oswald_bold, $base_size + 2, $white);
+      @include text(none, uppercase);
+    }
+    &__description {
+      width: 380px;
+      @include font($open_sans_light, $base_size, #c6c6c6);
+    }
+    &__mobile{
+      @include font($open_sans_light, $base_size, #c6c6c6);
+      .mobile-img {
+        margin-right: 10px;
+      }
+    }
+    &__email {
+      @include font($open_sans_light, $base_size, #c6c6c6);
+      .email{
+        &-img {
+          margin-right: 10px;
+        }
+        &-link {
+          text-decoration: none;
+          color: #c6c6c6;
+        }
+      }
+    }
+  }
+  &-message {
+    flex-basis: 57%;
+    &__title {
+      @include font($oswald_bold, $base_size + 2, $white);
+      @include text(none, uppercase);
+    }
+    &__form{
+      .input-text {
+        background-color: $dark;
+        @include font($oswald_regular, $base_size, $gray);      
+        @include wh(210px, 33px);
+        margin-right: 10px;
+        border: 1px solid $white;
+        padding-left: 12px;
+        outline: none;
+      }
+      .text-submit {
+        @extend %flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+        max-width: 520px;
+      }
+      .text {
+        background-color: $dark;
+        @include font($oswald_regular, $base_size, $gray);
+      }
+      .submit-button {
+        background-color: $red;
+        @include font($oswald_regular, $base_size + 2, $white);
+        @include text(none, uppercase);
+        @include wh(224px, 40px);
+        @include position(relative, -133px, 92%); 
+        cursor: pointer;
+        border: none;
+      }
+      .statusInfo {
+        @include position(relative, -104px, 26%); 
+        width: 148px;
+        margin-left: 13px;
+        @include font($open_sans_light, $base_size, $gray2);
+      }
+    }
+  }
+  &-copyright-back {
+    @extend %flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+  &-copyright {
+    @include font($open_sans_light, $base_size, #707070);
+  }
+  &-back {
+    margin-right: 50px;
+	@include font($open_sans_light, $base_size, $red);
+    text-decoration: underline;
+	cursor: pointer;
+  }
+}
+@import "media";
